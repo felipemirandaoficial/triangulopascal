@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        function calcularTrianguloPascal(rows) {
+            var triangle = [];
+
+            for (var i = 0; i < rows; i++) {
+                triangle[i] = [];
+                triangle[i][0] = 1;
+
+                for (var j = 1; j < i; j++) {
+                    triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
+                }
+
+                triangle[i][i] = 1;
+            }
+
+            return triangle;
+        }
+
+        function exibirTrianguloPascal(triangle) {
+            var table = '<table>';
+
+            for (var i = 0; i < triangle.length; i++) {
+                table += '<tr>';
+
+                for (var j = 0; j < triangle[i].length; j++) {
+                    table += '<td>' + triangle[i][j] + '</td>';
+                }
+
+                table += '</tr>';
+            }
+
+            table += '</table>';
+
+            document.body.innerHTML = table;
+        }
+
+        var numRows = 6;
+        var pascalTriangle = calcularTrianguloPascal(numRows);
+        exibirTrianguloPascal(pascalTriangle);
+    </script>
+
+</body>
+</html>
