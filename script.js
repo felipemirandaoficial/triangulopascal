@@ -1,4 +1,4 @@
-<script>
+
         function calcularTrianguloPascal(rows) {
             var triangle = [];
 
@@ -30,4 +30,3 @@
         var numRows = 6;
         var pascalTriangle = calcularTrianguloPascal(numRows);
         exibirTrianguloPascal(pascalTriangle);
-    </script>
