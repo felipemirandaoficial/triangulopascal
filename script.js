@@ -17,10 +17,11 @@
         }
 
         function exibirTrianguloPascal(triangle) {
-            var pascoso;
+            var pascoso = '';
             for (var i = 0; i < triangle.length; i++) {
+                pascoso += '\n';
                 for (var j = 0; j < triangle[i].length; j++) {
-                    pascoso += '\n' + triangle[i][j] ;
+                    pascoso += triangle[i][j] ;
                 }
             }
             console.log(pascoso);
